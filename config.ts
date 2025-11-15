@@ -4,7 +4,7 @@ export const site = {
     type: "LocalBusiness",
     name: "Limpiacristales Madrid",
     description: "Limpieza profesional de cristales para oficinas, comunidades y particulares.",
-    image: "/og-image.jpg",
+    image: "og-image.jpg",
     telephone: "+34 666 777 666",
     email: "info@cristalesmadrid.es",
     address: {
@@ -31,7 +31,7 @@ export const site = {
       "ósmosis madrid"
     ],
     canonical: "https://cristalesmadrid.es",
-    ogImage: "/og-image.jpg"
+    ogImage: "og-image.jpg"
   },
 
   business: {
@@ -68,7 +68,7 @@ export const site = {
   },
 
   hero: {
-    image: "/hero-background.jpg",
+    image: "hero-background.jpg",
     overlay: "rgba(0,0,0,0.30)",
     fallbackColor: "#233043",
     title: "Cristales impecables en un momento",
@@ -101,9 +101,9 @@ export const site = {
       title: "Galería",
       type: "gallery",
       images: [
-        { src: "/cristales1.jpg", alt: "Limpieza de cristales Madrid" },
-        { src: "/cristales2.jpg", alt: "Trabajo profesional" },
-        { src: "/cristales3.jpg", alt: "Acabado impecable" },
+        { src: "cristales1.jpg", alt: "Limpieza de cristales Madrid" },
+        { src: "cristales2.jpg", alt: "Trabajo profesional" },
+        { src: "cristales3.jpg", alt: "Acabado impecable" },
       ]
     },
 

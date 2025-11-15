@@ -170,7 +170,7 @@ Todo se controla desde `config.ts`:
 
   ```ts
   hero: {
-    image: "/hero.jpg",
+    image: "hero.jpg",
     title: "Título"
   }
   ```
