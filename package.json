@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "ts-node ./tools/prepare-seo.ts",
+    "prebuild": "node scripts/run-prepare-seo.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
