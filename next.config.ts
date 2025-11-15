@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: "/cristales-madrid",
+  assetPrefix: "/cristales-madrid/",
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;

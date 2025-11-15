@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     --bg-alt: ${site.colors.bgAlt};
     --border: ${site.colors.border};
 
-    --hero-image: url('${site.hero.image}');
+    --hero-image: url('${process.env.NEXT_PUBLIC_BASE_PATH || ""}${site.hero.image}');
     --hero-text: ${site.colors.heroText};
     --hero-text-soft: ${site.colors.heroTextSoft};
     --hero-fallback: ${site.colors.heroFallback};
