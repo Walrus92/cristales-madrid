@@ -51,8 +51,8 @@ export const site = {
     bg: "#f8fafce3",
     bgAlt: "#F0F4F8",
     border: "#E2E8F0",
-    heroText: "#FFFFFF",
-    heroTextSoft: "rgba(255,255,255,0.85)",
+    heroText: "#E5ECF5",
+    heroTextSoft: "rgba(242, 242, 242, 0.98)",
     heroFallback: "#233043",
     heroOverlay: "rgba(0,0,0,0.30)",
     headerBgScrolled: "rgba(255,255,255,0.85)",
@@ -71,18 +71,27 @@ export const site = {
     image: "hero-background.jpg",
     overlay: "rgba(0,0,0,0.30)",
     fallbackColor: "#233043",
-    title: "Cristales impecables en un momento",
-    subtitle: "Limpieza profesional para viviendas, oficinas y comunidades. Rápido, limpio y sin molestias.",
+
+    // TITULAR reducido (máx 2 líneas)
+    title: "Cristales impecables sin esperas",
+
+    // SUBTÍTULO más ligero (1–2 líneas)
+    subtitle: "Limpieza profesional con ósmosis. Rápido, sin marcas y sin molestias.",
+
+    // BULLETS reducidos a 2
     bulletPoints: [
-      "Respuesta rápida",
-      "Ósmosis y herramientas pro",
-      "Acabado perfecto sin marcas"
+      "Respuesta el mismo día",
+      "Acabado profesional sin marcas"
     ],
+
+    // BOTONES
     ctaLabel: "Solicitar presupuesto",
     ctaHref: "#contacto",
+
     ctaSecondaryLabel: "WhatsApp directo",
     ctaSecondaryHref: "https://wa.me/34666777666"
   },
+
 
   whatsapp: {
     number: "34666777666",

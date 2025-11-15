@@ -15,37 +15,51 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
-    ${scrolled ? "backdrop-blur-md shadow-md" : "bg-transparent"}
-    `}
+            id="main-header"
+            className="
+                fixed top-0 left-0 w-full z-50 
+                transition-all duration-300 
+                backdrop-blur-md shadow-md
+            "
             style={{
-                backgroundColor: scrolled ? "var(--header-bg-scrolled)" : "transparent",
+                backgroundColor: scrolled
+                    ? "var(--header-bg-scrolled)"
+                    : "transparent",
+                clipPath: "inset(0 0 0 100%)",
+                overflow: "hidden",             // <-- NECESARIO para que el barrido funcione
             }}
         >
             <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
 
                 {/* LOGO */}
-                <div
-                    className="font-extrabold text-xl transition-all"
-                    style={{
-                        color: scrolled ? "var(--header-text)" : "var(--header-text-invert)",
-                        transform: scrolled ? "translateX(0)" : "translateX(10px)",
-                    }}
-                >
-                    {site.business.name}
+                <div className="flex items-center gap-2 relative">
+                    <div
+                        id="brand-text"
+                        className="pl-8 font-extrabold text-xl transition-all"
+                        style={{
+                            color: scrolled
+                                ? "var(--header-text)"
+                                : "var(--header-text-invert)",
+                        }}
+                    >
+                        <span id="brand-inner">{site.business.name}</span>
+                    </div>
                 </div>
 
-                {/* NAV */}
                 {/* NAV DESKTOP */}
-                <nav className={`hidden md:flex gap-8 transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
-                    }`}>
+                <nav
+                    className={`hidden md:flex gap-8 transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+                        }`}
+                >
                     {navItems.map((item) => (
                         <a
                             key={item.id}
                             href={`#${item.id}`}
                             className="font-medium transition"
                             style={{
-                                color: scrolled ? "var(--header-text)" : "var(--header-text-invert)",
+                                color: scrolled
+                                    ? "var(--header-text)"
+                                    : "var(--header-text-invert)",
                             }}
                         >
                             {item.title}
@@ -53,7 +67,7 @@ export default function Header() {
                     ))}
                 </nav>
 
-                {/* WHATSAPP DESKTOP */}
+                {/* WHATSAPP */}
                 <a
                     href={site.whatsapp.href}
                     className={`hidden md:block rounded-full px-4 py-2 font-medium transition-all ${scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -67,18 +81,20 @@ export default function Header() {
                     WhatsApp
                 </a>
 
-                {/* BURGER MOBILE */}
+                {/* BURGER */}
                 <button
                     className="md:hidden text-2xl"
                     onClick={() => setOpen(!open)}
                     style={{
-                        color: scrolled ? "var(--header-text)" : "var(--header-text-invert)",
+                        color: scrolled
+                            ? "var(--header-text)"
+                            : "var(--header-text-invert)",
                     }}
                 >
                     ☰
                 </button>
-
             </div>
+
             {/* MENU MOVIL */}
             {open && (
                 <div
@@ -104,7 +120,6 @@ export default function Header() {
                     </a>
                 </div>
             )}
-
         </header>
     );
 }
