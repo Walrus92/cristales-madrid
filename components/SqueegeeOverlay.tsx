@@ -59,23 +59,30 @@ export default function SqueegeeOverlay() {
 
     useEffect(() => {
         const onScroll = () => {
-            const max = 200;
+            const max = 80; // 🔥 Antes 200 → más rápido y más suave
             const raw = Math.min(window.scrollY / max, 1);
 
-            // easing suave único – el mismo para raqueta y header
+            // easing suave y fluido
             const eased =
                 raw < 0.5
-                    ? 4 * raw * raw * raw
-                    : 1 - Math.pow(-2 * raw + 2, 3) / 2;
+                    ? 3 * raw * raw         // curva más rápida al inicio
+                    : 1 - Math.pow(1 - raw, 3);
 
             setProgress(eased);
 
-            // sincronizar el header aquí
+            // Barrido del header (solo si quieres mantenerlo)
             const header = document.getElementById("main-header");
             if (header) {
-                const wipe = eased * 100;
-                // empieza oculto izquierda (100%) → termina visible (0%)
-                header.style.clipPath = `inset(0 ${0}% 0 ${100 - wipe}%)`;
+                // derecha → izquierda
+                const rightRemaining = (1 - eased) * 100;
+                header.style.clipPath = `inset(0 0 0 ${rightRemaining}%)`;
+
+                // 🔥 Si aún no ha terminado de aparecer, deja pasar clicks al burger
+                if (rightRemaining > 5) {
+                    header.style.pointerEvents = "auto";
+                } else {
+                    header.style.pointerEvents = "auto"; // siempre clickable cuando ya está visible
+                }
             }
         };
 
@@ -84,6 +91,7 @@ export default function SqueegeeOverlay() {
 
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
 
 
     const x = start.x + (target.x - start.x) * progress;
@@ -99,7 +107,7 @@ export default function SqueegeeOverlay() {
                 transform: `translate(${x}px, ${y}px) rotate(${rotation}deg)`,
                 transformOrigin: "center",
                 transition: "transform 0.06s linear",
-                zIndex: 2000,
+                zIndex: 50,
                 pointerEvents: "none",
             }}
         >

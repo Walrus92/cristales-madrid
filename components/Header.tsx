@@ -27,23 +27,24 @@ export default function Header() {
                     : "transparent",
                 clipPath: "inset(0 0 0 100%)",
                 overflow: "hidden",             // <-- NECESARIO para que el barrido funcione
+                pointerEvents: "auto",
             }}
         >
             <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
 
                 {/* LOGO */}
                 <div className="flex items-center gap-2 relative">
-                    <div
+                    <a
+                        href="#"
                         id="brand-text"
-                        className="pl-8 font-extrabold text-xl transition-all"
+                        className="pl-8 font-extrabold text-xl transition-all cursor-pointer"
                         style={{
-                            color: scrolled
-                                ? "var(--header-text)"
-                                : "var(--header-text-invert)",
+                            color: scrolled ? "var(--header-text)" : "var(--header-text-invert)",
                         }}
                     >
                         <span id="brand-inner">{site.business.name}</span>
-                    </div>
+                    </a>
+
                 </div>
 
                 {/* NAV DESKTOP */}

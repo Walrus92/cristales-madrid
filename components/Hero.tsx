@@ -14,13 +14,13 @@ export default function Hero() {
       <div className="
   absolute inset-0 
   bg-gradient-to-b 
-  from-black/60 via-black/30 to-transparent 
+  from-black/30 via-black/10 to-transparent 
   backdrop-blur-[2px]
 " />
       <div className="
   absolute inset-0 
   pointer-events-none 
-  shadow-[inset_0_0_120px_40px_rgba(0,0,0,0.6)]
+  shadow-[inset_0_0_90px_20px_rgba(0,0,0,0.6)]
 " />
 
       <SqueegeeOverlay />
