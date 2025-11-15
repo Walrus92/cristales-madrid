@@ -57,7 +57,7 @@ export default function Section({ section }: { section: any }) {
             {section.images?.map((img: any, i: number) => (
               <Reveal key={i}>
                 <img
-                  src={img.src}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${img.src}`}
                   alt={img.alt}
                   className="rounded w-full h-56 object-cover
     transition-transform duration-300
