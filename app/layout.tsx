@@ -47,13 +47,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     --pricing-title: ${site.colors.pricingTitle};
     --pricing-price: ${site.colors.pricingPrice};
     --pricing-text: ${site.colors.pricingText};
+    --card-bg: rgba(255,255,255,0.85);
+  --card-border: rgba(58,125,255,0.18);
+  --card-shadow: rgba(0,0,0,0.06);
+  --card-shadow-hover: rgba(0,0,0,0.10);
+
+  --section-bg-strong: rgba(58,125,255,0.04);
+  --section-bg-soft: rgba(58,125,255,0.02);
+
+  --title-highlight: linear-gradient(to bottom right, rgba(58,125,255,0.12), transparent);
   }
 `}</style>
 
 
       </head>
 
-      <body className={manrope.className}>
+      <body
+        className={manrope.className}
+        style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}
+      >
         {children}
       </body>
     </html>

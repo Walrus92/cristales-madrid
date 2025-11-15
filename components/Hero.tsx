@@ -3,15 +3,9 @@ import Reveal from "@/components/Reveal";
 
 export default function Hero() {
   return (
-    <section
-      className="relative w-full h-[100svh] flex flex-col items-center justify-center px-6 hero-bg"
-    >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/10 backdrop-brightness-75" />
-      <div
-        className="absolute inset-0 bg-black/30"
-        style={{ backdropFilter: "brightness(0.9)" }}
-      />
+    <section className="relative w-full h-[100svh] flex flex-col items-center justify-center px-6 hero-bg bg-gradient-to-b from-black/40 via-black/25 to-black/10">
 
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-transparent" />
 
       <div className="relative z-10 w-full max-w-4xl text-center flex flex-col gap-8 mt-10">
 
@@ -25,10 +19,7 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <p
-            className="text-lg md:text-2xl"
-            style={{ color: "var(--hero-text-soft)" }}
-          >
+          <p className="text-xl md:text-2xl font-medium opacity-90" style={{ color: "var(--hero-text-soft)" }}>
             {site.hero.subtitle}
           </p>
         </Reveal>

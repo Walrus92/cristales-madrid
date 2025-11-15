@@ -10,26 +10,32 @@ export default function Section({ section }: { section: any }) {
       <div className="max-w-6xl mx-auto px-6">
 
         <Reveal>
-          <h2
-            className="text-3xl font-extrabold mb-12 text-center tracking-tight"
-            style={{
-              color: "var(--section-title)",
-              padding: "0.2rem 0",
-            }}
-          >
-            {section.title}
-          </h2>
+          <div className="text-center mb-12">
+            <h2
+              className="text-3xl font-extrabold tracking-tight"
+              style={{
+                color: "var(--section-title)",
+                padding: "0.2rem 0",
+              }}
+            >
+              {section.title}
+            </h2>
+
+            {/* Línea separadora elegante */}
+            <div className="mx-auto mt-3 w-16 h-[2px] rounded-full bg-[var(--primary)] opacity-50"></div>
+          </div>
         </Reveal>
 
         {/* LIST SECTION */}
         {section.type === "list" && (
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {section.items?.map((item: any, i: number) => (
               <Reveal key={i}>
                 <div className="p-6 rounded-xl shadow-sm transition hover:shadow-lg hover:-translate-y-1 backdrop-blur-sm"
                   style={{
                     backgroundColor: "var(--bg-alt)",
                     border: "1px solid var(--border)",
+                    borderTop: "3px solid var(--primary)",
                   }}
                 >
                   <div className="text-4xl mb-3">{item.icon}</div>

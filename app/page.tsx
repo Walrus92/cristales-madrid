@@ -10,9 +10,11 @@ export default function Page() {
       <Header />
       <Hero />
 
-      {site.sections.map((section, i) => (
-        <Section key={i} section={section} />
-      ))}
+      {site.sections
+        .filter((s) => s.type !== "hidden")
+        .map((section, i) => (
+          <Section key={i} section={section} />
+        ))}
       <Footer />
     </main>
   );

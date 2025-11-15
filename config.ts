@@ -1,237 +1,181 @@
 export const site = {
-  /*
-  ─────────────────────────────────────────
-  SCHEMA (JSON-LD para SEO local)
-  ─────────────────────────────────────────
-  */
+
   schema: {
     type: "LocalBusiness",
-    name: "Nombre del negocio",
-    description: "Descripción corta del servicio.",
+    name: "Limpiacristales Madrid",
+    description: "Limpieza profesional de cristales para oficinas, comunidades y particulares.",
     image: "/og-image.jpg",
-    telephone: "+34 600 000 000",
-    email: "info@ejemplo.com",
+    telephone: "+34 666 777 666",
+    email: "info@cristalesmadrid.es",
     address: {
-      street: "Calle Ejemplo 123",
+      street: "Madrid",
       locality: "Madrid",
       region: "Madrid",
       postalCode: "28000",
       country: "ES",
     },
-    url: "https://www.midominio.com",
+    url: "https://cristalesmadrid.es",
     areaServed: "Madrid y alrededores",
     priceRange: "€€",
   },
 
-  /*
-  ─────────────────────────────────────────
-  SEO
-  ─────────────────────────────────────────
-  */
   seo: {
-    title: "Título SEO para Google",
-    description: "Descripción clara enfocada a conversión y SEO.",
+    title: "Limpieza de cristales profesional en Madrid | Limpiacristales Madrid",
+    description:
+      "Limpieza profesional de cristales en Madrid para viviendas, oficinas y comunidades. Rápidos, limpios y con acabado perfecto.",
     keywords: [
-      "limpiacristales madrid",
-      "limpieza de cristales",
-      "servicio profesional",
-      "empresa de limpieza"
+      "limpieza cristales madrid",
+      "limpiacristales",
+      "cristales oficinas",
+      "cristales comunidades",
+      "ósmosis madrid"
     ],
-    canonical: "https://www.midominio.com",
+    canonical: "https://cristalesmadrid.es",
     ogImage: "/og-image.jpg"
   },
 
-  /*
-  ─────────────────────────────────────────
-  DATOS DE NEGOCIO
-  ─────────────────────────────────────────
-  */
   business: {
-    name: "Nombre del negocio",
-    tagline: "Subtítulo",
-    description: "Descripción corta del servicio",
-    email: "info@ejemplo.com",
-    phone: "+34 600 000 000",
-    location: "Ciudad, País"
+    name: "Limpiacristales Madrid",
+    tagline: "Cristales siempre perfectos.",
+    description: "Limpieza profesional de cristales en domicilios, empresas y comunidades.",
+    email: "info@cristalesmadrid.es",
+    phone: "+34 666 777 666",
+    location: "Madrid y alrededores"
   },
 
-  /*
-  ─────────────────────────────────────────
-  COLORES (diseño suave premium)
-  ─────────────────────────────────────────
-  */
   colors: {
-    /* PRIMARIO */
-    primary: "#4F6BFF",          // azul más limpio y menos chillón
-    primaryDark: "#3D55D6",
-
-    /* TEXTO GLOBAL */
-    text: "#0F172A",             // slate-900 (casi negro, muy legible)
-    textSoft: "#475569",         // slate-600
-
-    /* FONDOS */
-    bg: "#F8FAFC",               // slate-50 (más moderno que gris plano)
-    bgAlt: "#FFFFFF",
-    border: "#E2E8F0",           // slate-200
-
-    /* HERO — para que se lea SIEMPRE */
-    heroText: "#FFFFFF",         // blanco puro = máxima legibilidad
-    heroTextSoft: "rgba(255,255,255,0.8)", // contraste suficiente
-    heroFallback: "#384252",     // tono oscuro elegante bajo la imagen
-    heroOverlay: "rgba(0,0,0,0.35)", // overlay universal para cualquier foto
-
-    /* HEADER */
-    headerBgScrolled: "rgba(255,255,255,0.85)", // buen contraste sin parecer gris muerto
+    primary: "#3A7DFF",
+    primaryDark: "#2E63CC",
+    text: "#0F172A",
+    textSoft: "#475569",
+    bg: "#f8fafce3",
+    bgAlt: "#F0F4F8",
+    border: "#E2E8F0",
+    heroText: "#FFFFFF",
+    heroTextSoft: "rgba(255,255,255,0.85)",
+    heroFallback: "#233043",
+    heroOverlay: "rgba(0,0,0,0.30)",
+    headerBgScrolled: "rgba(255,255,255,0.85)",
     headerText: "#0F172A",
     headerTextInvert: "#FFFFFF",
-
-    /* TITULARES DE SECCIÓN */
-    sectionTitle: "#0F172A",      // fuerte, legible
-    sectionText: "#475569",       // suave pero no tan claro como antes
-
-    /* FAQ */
+    sectionTitle: "#2E63CC",
+    sectionText: "#475569",
     faqQ: "#0F172A",
     faqA: "#475569",
-
-    /* PRICING */
     pricingTitle: "#0F172A",
-    pricingPrice: "#1E293B",      // slate-800 (oscuro elegante)
+    pricingPrice: "#1E293B",
     pricingText: "#475569"
   },
 
-
-  /*
-  ─────────────────────────────────────────
-  HERO
-  ─────────────────────────────────────────
-  */
   hero: {
     image: "/hero-background.jpg",
-    overlay: "rgba(96, 96, 96, 0.18)",
-    fallbackColor: "#61616170",
-    title: "Tu servicio profesional en la zona",
-    subtitle: "Rápido, fiable y con garantía. Más de 150 clientes satisfechos.",
-
+    overlay: "rgba(0,0,0,0.30)",
+    fallbackColor: "#233043",
+    title: "Cristales impecables en un momento",
+    subtitle: "Limpieza profesional para viviendas, oficinas y comunidades. Rápido, limpio y sin molestias.",
     bulletPoints: [
-      "Precios cerrados",
-      "Respuesta en el mismo día",
-      "Material profesional"
+      "Respuesta rápida",
+      "Ósmosis y herramientas pro",
+      "Acabado perfecto sin marcas"
     ],
-
-    ctaLabel: "Pide presupuesto",
+    ctaLabel: "Solicitar presupuesto",
     ctaHref: "#contacto",
-
-    ctaSecondaryLabel: "Hablar por WhatsApp",
-    ctaSecondaryHref: "https://wa.me/34600000000"
+    ctaSecondaryLabel: "WhatsApp directo",
+    ctaSecondaryHref: "https://wa.me/34666777666"
   },
 
-  /*
-  ─────────────────────────────────────────
-  WHATSAPP
-  ─────────────────────────────────────────
-  */
   whatsapp: {
-    number: "34600000000",
-    message: "Hola, quiero más información!",
+    number: "34666777666",
+    message: "Hola, quiero información sobre la limpieza de cristales.",
     buttonLabel: "WhatsApp",
-    href: "https://wa.me/34600000000?text=Hola,%20quiero%20información",
+    href: "https://wa.me/34666777666?text=Hola,%20quiero%20información"
   },
 
-  /*
-  ─────────────────────────────────────────
-  FORMULARIO
-  ─────────────────────────────────────────
-  */
-  formspree: {
-    endpoint: "https://formspree.io/f/XXXXX"
-  },
+  formspree: { endpoint: "https://formspree.io/f/XXXXX" },
 
-  /*
-  ─────────────────────────────────────────
-  SECCIONES (versión limpia para header)
-  ─────────────────────────────────────────
-  */
   sections: [
+    // GALERÍA
     {
       id: "galeria",
+      nav: false,
       title: "Galería",
-      nav: false,              // ❌ no va al header
       type: "gallery",
       images: [
-        { src: "/cristales1.jpg", alt: "Descripción 1" },
-        { src: "/cristales2.jpg", alt: "Descripción 2" },
-        { src: "/cristales3.jpg", alt: "Descripción 3" }
+        { src: "/cristales1.jpg", alt: "Limpieza de cristales Madrid" },
+        { src: "/cristales2.jpg", alt: "Trabajo profesional" },
+        { src: "/cristales3.jpg", alt: "Acabado impecable" },
       ]
     },
 
+    // SERVICIOS (4)
     {
       id: "servicios",
+      nav: true,
       title: "Servicios",
-      nav: true,               // ✔ sí va al header
       type: "list",
       items: [
-        { icon: "🧽", title: "Servicio 1", text: "Descripción breve." },
-        { icon: "🏠", title: "Servicio 2", text: "Descripción breve." },
-        { icon: "💼", title: "Servicio 3", text: "Descripción breve." }
+        { icon: "🏠", title: "Domicilios", text: "Ventanas, terrazas y cerramientos sin marcas." },
+        { icon: "🏢", title: "Empresas", text: "Limpieza interior y exterior con mínima interrupción." },
+        { icon: "🏘️", title: "Comunidades", text: "Portales y zonas comunes siempre perfectos." },
+        { icon: "💧", title: "Ósmosis y altura", text: "Pértigas de carbono y agua pura. Sin riesgos." }
       ]
     },
 
+    // VENTAJAS (4)
     {
       id: "ventajas",
-      title: "Por qué nosotros",
       nav: true,
+      title: "Por qué elegirnos",
       type: "list",
       items: [
-        { icon: "⚡", title: "Rápidos", text: "Llegamos y lo resolvemos." },
-        { icon: "🛡️", title: "Garantía", text: "Resultados asegurados." },
-        { icon: "🤝", title: "Trato cercano", text: "Cero complicaciones." }
+        { icon: "⚡", title: "Rápidos", text: "Respuesta el mismo día." },
+        { icon: "🧼", title: "Acabado profesional", text: "Herramientas y técnica experta." },
+        { icon: "💧", title: "Ósmosis pura", text: "Cristales sin cal ni marcas." },
+        { icon: "🤝", title: "Trato cercano", text: "Comunicación fácil y clara." }
       ]
     },
 
+    // OPINIONES (3)
     {
-      id: "testimonios",
-      title: "Testimonios",
-      nav: false,              // ❌ no va al header
+      id: "opiniones",
+      nav: false,
+      title: "Opiniones",
       type: "testimonials",
       testimonials: [
-        { name: "Carlos M.", location: "Madrid", text: "Servicio impecable." },
-        { name: "Ana G.", location: "Móstoles", text: "Trato excelente..." },
-        { name: "Coimbra.", location: "Majadahonda", text: "Impoluto y puntual" }
+        { name: "María L.", location: "Las Rozas", text: "Los cristales del chalé quedaron perfectos. Muy profesionales." },
+        { name: "Javier S.", location: "Madrid", text: "Rápidos, limpios y sin interrupciones en la oficina." },
+        { name: "Comunidad Monteverde", location: "Pozuelo", text: "Zonas comunes impecables cada mes. 100% recomendables." }
       ]
     },
 
+    // PRECIOS — oculto
     {
       id: "precios",
-      title: "Precios",
-      nav: true,
-      type: "pricing",
-      plans: [
-        { name: "Básico", price: "39€", features: ["Servicio estándar", "Entrega rápida"], cta: "Elegir básico" },
-        { name: "Profesional", price: "79€", features: ["Servicio completo", "Material premium", "Garantía incluida"], cta: "Elegir profesional" },
-        { name: "Premium", price: "129€", features: ["Servicio avanzado", "Extras incluidos", "Preferencia en agenda"], cta: "Elegir premium" }
-      ]
+      nav: false,
+      type: "hidden"
     },
 
-    // FAQS
+    // FAQs
     {
       id: "faqs",
-      title: "FAQs",
       nav: false,
+      title: "Preguntas frecuentes",
       type: "faqs",
       faqs: [
-        { q: "¿En qué zonas trabajáis?", a: "Trabajamos en toda la provincia." },
-        { q: "¿Cómo se realiza el pago?", a: "Bizum, transferencia o efectivo." },
+        { q: "¿Trabajáis en toda la Comunidad de Madrid?", a: "Sí, cubrimos Madrid capital y alrededores." },
+        { q: "¿Usáis productos químicos?", a: "Solo cuando es estrictamente necesario. Ósmosis en la mayoría de trabajos." },
+        { q: "¿Se puede pedir presupuesto por WhatsApp?", a: "Sí, envíanos fotos y te respondemos rápido." },
         { q: "¿Qué pasa si llueve?", a: "Reprogramamos sin coste adicional." }
       ]
     },
 
+    // CONTACTO
     {
       id: "contacto",
+      nav: true,
       title: "Contacto",
-      nav: true,               // ✔ sí va al header
       type: "contact",
-      description: "Cuéntanos..."
+      description: "Cuéntanos qué necesitas y te respondemos el mismo día."
     }
   ]
-
 };
