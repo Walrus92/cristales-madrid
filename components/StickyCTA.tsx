@@ -3,39 +3,59 @@ import { useEffect, useState } from "react";
 import { site } from "@/config";
 
 export default function StickyCTA() {
-  const [show, setShow] = useState(false);
+  const [hideContact, setHideContact] = useState(false);
+  const [heroCTAVisible, setHeroCTAVisible] = useState(true); // 👈 empieza visible en hero
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 220);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    // --- 1) Detectar si el CTA del hero está visible ---
+    const heroCTA = document.getElementById("hero-whatsapp"); // 👈 LO MARCAREMOS AHORA EN EL HERO
+    if (!heroCTA) return;
+
+    const ioHero = new IntersectionObserver(
+      ([entry]) => {
+        setHeroCTAVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    ioHero.observe(heroCTA);
+    return () => ioHero.disconnect();
   }, []);
 
-  if (!show) return null;
+  useEffect(() => {
+    // --- 2) Detectar si la sección de contacto está visible ---
+    const contact = document.getElementById("contacto");
+    if (!contact) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        setHideContact(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    io.observe(contact);
+    return () => io.disconnect();
+  }, []);
+
+  // --- 3) Lógica final ---
+  const hidden = heroCTAVisible || hideContact;
 
   return (
-    <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40">
-      <div className="flex gap-2 px-3 py-2 rounded-full backdrop-blur-md bg-white/70 shadow-[0_10px_30px_rgba(0,0,0,0.15)] border border-white/40">
-        <a
-          href={site.whatsapp.href}
-          className="px-4 py-2 rounded-full font-semibold text-white"
-          style={{ backgroundColor: "var(--primary)" }}
-        >
-          WhatsApp
-        </a>
-        <a
-          href={`tel:${site.business.phone}`}
-          className="px-4 py-2 rounded-full font-semibold"
-          style={{
-            color: "var(--text)",
-            border: "1px solid var(--border)",
-            background: "rgba(255,255,255,0.55)",
-          }}
-        >
-          Llamar
-        </a>
-      </div>
+    <div
+      className={`
+        fixed bottom-4 left-1/2 -translate-x-1/2 z-[95]
+        md:hidden transition-all duration-300 
+        ${hidden ? "opacity-0 pointer-events-none translate-y-4" : "opacity-100 translate-y-0"}
+      `}
+    >
+      <a
+        href={site.whatsapp.href}
+        className="px-5 py-3 rounded-full text-white font-semibold shadow-lg"
+        style={{ backgroundColor: "#25D366" }}
+      >
+        WhatsApp
+      </a>
     </div>
   );
 }

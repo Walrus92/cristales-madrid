@@ -76,7 +76,7 @@ export const site = {
     title: "Cristales impecables sin esperas",
 
     // SUBTÍTULO más ligero (1–2 líneas)
-    subtitle: "Limpieza profesional con ósmosis. Rápido, sin marcas y sin molestias.",
+    subtitle: "Limpieza profesional. Rápido, sin marcas y sin molestias.",
 
     // BULLETS reducidos a 2
     bulletPoints: [
