@@ -1,6 +1,6 @@
 import { site } from "@/config";
 import Reveal from "@/components/Reveal";
-import SqueegeeOverlay from "@/components/SqueegeeOverlay";
+//import SqueegeeOverlay from "@/components/SqueegeeOverlay";
 
 export default function Hero() {
   return (
@@ -14,16 +14,14 @@ export default function Hero() {
       <div className="
   absolute inset-0 
   bg-gradient-to-b 
-  from-black/30 via-black/10 to-transparent 
+  from-black/10 via-black/10 to-transparent 
   backdrop-blur-[2px]
 " />
       <div className="
   absolute inset-0 
   pointer-events-none 
-  shadow-[inset_0_0_90px_20px_rgba(0,0,0,0.6)]
+  shadow-[inset_0_0_50px_1px_rgba(0,0,0,0.6)]
 " />
-
-      <SqueegeeOverlay />
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-transparent" />
 
       <div className="relative z-10 w-full max-w-4xl text-center flex flex-col gap-8 mt-10">

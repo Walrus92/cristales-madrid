@@ -1,7 +1,8 @@
-import SqueegeeOverlay from "@/components/SqueegeeOverlay";
 import "./globals.css";
 import { site } from "@/config";
 import { Manrope } from "next/font/google";
+import StickyCTA from "@/components/StickyCTA";
+import Header from "@/components/Header";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -19,59 +20,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           as="image"
           href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/${site.hero.image}`}
         />
-        {/* VARIABLES CSS DEFINITIVAS BASADAS EN CONFIG */}
         <style>{`
-  :root {
-    --primary: ${site.colors.primary};
-    --primary-dark: ${site.colors.primaryDark};
+          :root {
+            --primary: ${site.colors.primary};
+            --primary-dark: ${site.colors.primaryDark};
+            --text: ${site.colors.text};
+            --text-soft: ${site.colors.textSoft};
 
-    --text: ${site.colors.text};
-    --text-soft: ${site.colors.textSoft};
+            --bg: ${site.colors.bg};
+            --bg-alt: ${site.colors.bgAlt};
+            --border: ${site.colors.border};
+            --hero-image: url('${process.env.NEXT_PUBLIC_BASE_PATH || ""}/${site.hero.image}');
+            --hero-text: ${site.colors.heroText};
+            --hero-text-soft: ${site.colors.heroTextSoft};
+            --hero-fallback: ${site.colors.heroFallback};
+            --hero-overlay: ${site.colors.heroOverlay};
 
-    --bg: ${site.colors.bg};
-    --bg-alt: ${site.colors.bgAlt};
-    --border: ${site.colors.border};
-
---hero-image: url('${process.env.NEXT_PUBLIC_BASE_PATH || ""}/${site.hero.image}');
-    --hero-text: ${site.colors.heroText};
-    --hero-text-soft: ${site.colors.heroTextSoft};
-    --hero-fallback: ${site.colors.heroFallback};
-    --hero-overlay: ${site.colors.heroOverlay};
-
-    --header-bg-scrolled: ${site.colors.headerBgScrolled};
-    --header-text: ${site.colors.headerText};
-    --header-text-invert: ${site.colors.headerTextInvert};
-
-    --section-title: ${site.colors.sectionTitle};
-    --section-text: ${site.colors.sectionText};
-
-    --faq-q: ${site.colors.faqQ};
-    --faq-a: ${site.colors.faqA};
-
-    --pricing-title: ${site.colors.pricingTitle};
-    --pricing-price: ${site.colors.pricingPrice};
-    --pricing-text: ${site.colors.pricingText};
-    --card-bg: rgba(255,255,255,0.85);
-  --card-border: rgba(58,125,255,0.18);
-  --card-shadow: rgba(0,0,0,0.06);
-  --card-shadow-hover: rgba(0,0,0,0.10);
-
-  --section-bg-strong: rgba(58,125,255,0.04);
-  --section-bg-soft: rgba(58,125,255,0.02);
-
-  --title-highlight: linear-gradient(to bottom right, rgba(58,125,255,0.12), transparent);
-  }
-`}</style>
-
-
+            --header-bg-scrolled: ${site.colors.headerBgScrolled};
+            --header-text: ${site.colors.headerText};
+            --header-text-invert: ${site.colors.headerTextInvert};
+          }
+        `}</style>
       </head>
 
-      <body
-        className={manrope.className}
-        style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}
-      >
-        <SqueegeeOverlay />
+      <body className={manrope.className} style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}>
+        <Header />      {/* <-- TODO lo manejamos dentro */}
         {children}
+        <StickyCTA />
       </body>
     </html>
   );
